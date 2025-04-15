@@ -50,7 +50,7 @@
             flowLayoutPanelTop.Location = new Point(0, 0);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
             flowLayoutPanelTop.Padding = new Padding(10);
-            flowLayoutPanelTop.Size = new Size(736, 61);
+            flowLayoutPanelTop.Size = new Size(934, 61);
             flowLayoutPanelTop.TabIndex = 0;
             // 
             // btnAddGenre
@@ -86,12 +86,16 @@
             // 
             // dataGridViewGenres
             // 
+            dataGridViewGenres.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewGenres.BackgroundColor = Color.White;
             dataGridViewGenres.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewGenres.Dock = DockStyle.Fill;
             dataGridViewGenres.Location = new Point(10, 10);
+            dataGridViewGenres.MultiSelect = false;
             dataGridViewGenres.Name = "dataGridViewGenres";
-            dataGridViewGenres.Size = new Size(716, 330);
+            dataGridViewGenres.ReadOnly = true;
+            dataGridViewGenres.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewGenres.Size = new Size(914, 430);
             dataGridViewGenres.TabIndex = 1;
             // 
             // panelFill
@@ -101,7 +105,7 @@
             panelFill.Location = new Point(0, 61);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(736, 350);
+            panelFill.Size = new Size(934, 450);
             panelFill.TabIndex = 2;
             // 
             // FormListGenres
@@ -109,7 +113,7 @@
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(736, 411);
+            ClientSize = new Size(934, 511);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
