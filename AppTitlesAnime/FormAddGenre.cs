@@ -16,5 +16,33 @@ namespace AppTitlesAnime
         {
             InitializeComponent();
         }
+
+        private void TextBoxGenreName_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            {
+                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым");
+                btnSaveChanges.Enabled = false;
+            }
+            else
+            {
+                errorProvider.Clear();
+                btnSaveChanges.Enabled = false;
+            }
+        }
+
+        private void TextBoxGenreName_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            {
+                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым");
+                btnSaveChanges.Enabled = false;
+            }
+            else
+            {
+                errorProvider.Clear();
+                btnSaveChanges.Enabled = false;
+            }
+        }
     }
 }
