@@ -18,5 +18,14 @@ namespace AppTitlesAnime
             FormListGenres formListGenres = new FormListGenres();
             formListGenres.Show();
         }
+
+        // Определение метода, который будет вызываться при клике на кнопку BtnShowStatuses
+        private void BtnShowStatuses_Click(object sender, EventArgs e)
+        {
+            //создаем новую форму, которая будет отображать список статусов
+            FormListStatuses formListStatuses = new FormListStatuses();
+            //отображение созданной формы
+            formListStatuses.Show();
+        }
     }
 }

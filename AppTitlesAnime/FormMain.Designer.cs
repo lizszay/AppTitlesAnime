@@ -30,6 +30,7 @@
         {
             btnShowTypes = new Button();
             btnShowGenres = new Button();
+            btnShowStatuses = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -55,12 +56,24 @@
             btnShowGenres.UseVisualStyleBackColor = true;
             btnShowGenres.Click += BtnShowGenres_Click;
             // 
+            // btnShowStatuses
+            // 
+            btnShowStatuses.AutoSize = true;
+            btnShowStatuses.Location = new Point(12, 94);
+            btnShowStatuses.Name = "btnShowStatuses";
+            btnShowStatuses.Size = new Size(337, 35);
+            btnShowStatuses.TabIndex = 1;
+            btnShowStatuses.Text = "Отобразить список \"Статусы аниме\"";
+            btnShowStatuses.UseVisualStyleBackColor = true;
+            btnShowStatuses.Click += BtnShowStatuses_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(559, 357);
+            Controls.Add(btnShowStatuses);
             Controls.Add(btnShowGenres);
             Controls.Add(btnShowTypes);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -75,5 +88,6 @@
 
         private Button btnShowTypes;
         private Button btnShowGenres;
+        private Button btnShowStatuses;
     }
 }
