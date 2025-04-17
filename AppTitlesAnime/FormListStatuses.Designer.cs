@@ -61,6 +61,7 @@
             btnAddStatus.TabIndex = 0;
             btnAddStatus.Text = "Добавить";
             btnAddStatus.UseVisualStyleBackColor = true;
+            btnAddStatus.Click += BtnAddStatus_Click;
             // 
             // btnUpdateStatus
             // 

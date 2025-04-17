@@ -16,5 +16,24 @@ namespace AppTitlesAnime
         {
             InitializeComponent();
         }
+
+        private void BtnAddStatus_Click(object sender, EventArgs e)
+        {
+            FormAddStatus formAddStatus = new();
+            DialogResult result = formAddStatus.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            /*Status status = new Status();
+            status.TypeName = formAddStatus.textBoxStatusName.Text;
+
+            db.Statuses.Add(status);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewStatuses.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();*/
+        }
     }
 }
