@@ -49,7 +49,7 @@
             Top.Location = new Point(0, 0);
             Top.Name = "Top";
             Top.Padding = new Padding(10);
-            Top.Size = new Size(562, 61);
+            Top.Size = new Size(934, 61);
             Top.TabIndex = 0;
             // 
             // btnAddStatus
@@ -68,15 +68,15 @@
             btnUpdateStatus.AutoSize = true;
             btnUpdateStatus.Location = new Point(125, 13);
             btnUpdateStatus.Name = "btnUpdateStatus";
-            btnUpdateStatus.Size = new Size(107, 35);
+            btnUpdateStatus.Size = new Size(151, 35);
             btnUpdateStatus.TabIndex = 1;
-            btnUpdateStatus.Text = "Изменить";
+            btnUpdateStatus.Text = "Редактировать";
             btnUpdateStatus.UseVisualStyleBackColor = true;
             // 
             // btnDeleteStatus
             // 
             btnDeleteStatus.AutoSize = true;
-            btnDeleteStatus.Location = new Point(238, 13);
+            btnDeleteStatus.Location = new Point(282, 13);
             btnDeleteStatus.Name = "btnDeleteStatus";
             btnDeleteStatus.Size = new Size(92, 35);
             btnDeleteStatus.TabIndex = 2;
@@ -85,12 +85,16 @@
             // 
             // dataGridViewStatuses
             // 
+            dataGridViewStatuses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewStatuses.BackgroundColor = Color.White;
             dataGridViewStatuses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewStatuses.Dock = DockStyle.Fill;
             dataGridViewStatuses.Location = new Point(10, 10);
+            dataGridViewStatuses.MultiSelect = false;
             dataGridViewStatuses.Name = "dataGridViewStatuses";
-            dataGridViewStatuses.Size = new Size(542, 266);
+            dataGridViewStatuses.ReadOnly = true;
+            dataGridViewStatuses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewStatuses.Size = new Size(914, 430);
             dataGridViewStatuses.TabIndex = 1;
             // 
             // panelFill
@@ -100,7 +104,7 @@
             panelFill.Location = new Point(0, 61);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(562, 286);
+            panelFill.Size = new Size(934, 450);
             panelFill.TabIndex = 2;
             // 
             // FormListStatuses
@@ -108,7 +112,7 @@
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(562, 347);
+            ClientSize = new Size(934, 511);
             Controls.Add(panelFill);
             Controls.Add(Top);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);

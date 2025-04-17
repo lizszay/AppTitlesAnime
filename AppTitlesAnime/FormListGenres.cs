@@ -2,6 +2,7 @@
 using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
+
 namespace AppTitlesAnime
 {
     public partial class FormListGenres : Form
