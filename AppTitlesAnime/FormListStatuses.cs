@@ -56,5 +56,34 @@ namespace AppTitlesAnime
 
             this.dataGridViewStatuses.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
         }
+
+        private void BtnUpdateStatus_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewStatuses.SelectedRows.Count == 0)
+                return;
+
+            int index = dataGridViewStatuses.SelectedRows[0].Index;
+            short id = 0;
+            bool converted = Int16.TryParse(dataGridViewStatuses[0, index].Value.ToString(), out id);
+            if (!converted)
+                return;
+
+            Status status = db.Statuses.Find(id);
+            FormAddStatus formAddStatus = new();
+            formAddStatus.textBoxStatusName.Text = status.StatusName;
+
+            DialogResult result = formAddStatus.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            status.StatusName = formAddStatus.textBoxStatusName.Text;
+            db.Statuses.Update(status);
+            db.SaveChanges();
+
+            MessageBox.Show("Объект изменен");
+
+            this.dataGridViewStatuses.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
+        }
     }
 }
