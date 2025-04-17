@@ -85,5 +85,36 @@ namespace AppTitlesAnime
 
             this.dataGridViewStatuses.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
         }
+
+        private void BtnDeleteStatus_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewStatuses.SelectedRows.Count == 0)
+                return;
+
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите удалить объект? \nВсе связанные данные будут удалены.",
+                "",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+
+            if (result == DialogResult.No)
+                return;
+
+            int index = dataGridViewStatuses.SelectedRows[0].Index;
+            short id = 0;
+            bool converted = Int16.TryParse(dataGridViewStatuses[0, index].Value.ToString(), out id);
+            if (!converted)
+                return;
+
+            Status status = db.Statuses.Find(id);
+
+            db.Statuses.Remove(status);
+            db.SaveChanges();
+
+            MessageBox.Show("Объект удален");
+
+            this.dataGridViewStatuses.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
+        }
     }
 }
