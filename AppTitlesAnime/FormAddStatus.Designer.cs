@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             flowLayoutPanelBottom = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
@@ -35,8 +36,10 @@
             panelFill = new Panel();
             textBoxStatusName = new TextBox();
             labelStatusName = new Label();
+            errorProvider = new ErrorProvider(components);
             flowLayoutPanelBottom.SuspendLayout();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelBottom
@@ -55,20 +58,22 @@
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
+            btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(115, 35);
-            btnSaveChanges.TabIndex = 2;
+            btnSaveChanges.TabIndex = 0;
             btnSaveChanges.Text = "Сохранить";
             btnSaveChanges.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
             btnCancel.AutoSize = true;
+            btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(134, 13);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(88, 35);
-            btnCancel.TabIndex = 3;
+            btnCancel.TabIndex = 1;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -88,17 +93,18 @@
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
+            panelFill.Padding = new Padding(10, 10, 20, 10);
             panelFill.Size = new Size(434, 79);
-            panelFill.TabIndex = 2;
+            panelFill.TabIndex = 0;
             // 
             // textBoxStatusName
             // 
             textBoxStatusName.Dock = DockStyle.Top;
             textBoxStatusName.Location = new Point(10, 35);
             textBoxStatusName.Name = "textBoxStatusName";
-            textBoxStatusName.Size = new Size(414, 33);
+            textBoxStatusName.Size = new Size(404, 33);
             textBoxStatusName.TabIndex = 1;
+            textBoxStatusName.Validating += TextBoxStatusName_Validating;
             // 
             // labelStatusName
             // 
@@ -109,6 +115,10 @@
             labelStatusName.Size = new Size(141, 25);
             labelStatusName.TabIndex = 0;
             labelStatusName.Text = "Статусы аниме";
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // FormAddStatus
             // 
@@ -126,6 +136,7 @@
             flowLayoutPanelBottom.PerformLayout();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,7 +148,8 @@
         private Panel panelFill;
         private Button btnSaveChanges;
         private Button btnCancel;
-        private TextBox textBoxStatusName;
         private Label labelStatusName;
+        protected internal TextBox textBoxStatusName;
+        private ErrorProvider errorProvider;
     }
 }

@@ -71,7 +71,7 @@ public partial class AppContext : DbContext
             entity.ToTable("statuses");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.StatuseName).HasColumnName("statuse_name");
+            entity.Property(e => e.StatusName).HasColumnName("status_name");
         });
 
         modelBuilder.Entity<TitlesGenre>(entity =>
