@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 
 namespace AppTitlesAnime
 {
@@ -27,7 +19,7 @@ namespace AppTitlesAnime
             else
             {
                 errorProvider.Clear();
-                btnSaveChanges.Enabled = false;
+                btnSaveChanges.Enabled = true;
             }
         }
 
@@ -41,7 +33,7 @@ namespace AppTitlesAnime
             else
             {
                 errorProvider.Clear();
-                btnSaveChanges.Enabled = false;
+                btnSaveChanges.Enabled = true;
             }
         }
     }

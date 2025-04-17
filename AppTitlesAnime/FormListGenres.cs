@@ -18,7 +18,7 @@ namespace AppTitlesAnime
             base.OnLoad(e);
             this.db = new AppContext();
             this.db.Genres.Load();
-            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o=>o.GenreName).ToList();
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
 
             //скрытие столбцов
             dataGridViewGenres.Columns["Id"].Visible = false;
@@ -53,6 +53,36 @@ namespace AppTitlesAnime
             MessageBox.Show("Новый объект добавлен");
 
             this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
+        }
+
+        private void BtnUpdateGenre_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewGenres.SelectedRows.Count == 0)
+                return;
+
+            int index = dataGridViewGenres.SelectedRows[0].Index;
+            short id = 0;
+            bool converted = Int16.TryParse(dataGridViewGenres[0, index].Value.ToString(), out id);
+            if (!converted)
+                return;
+
+            Genre genre = db.Genres.Find(id);
+            FormAddGenre formAddGenre = new();
+            formAddGenre.textBoxGenreName.Text = genre.GenreName;
+
+            DialogResult result = formAddGenre.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            genre.GenreName = formAddGenre.textBoxGenreName.Text;
+            db.Genres.Update(genre);
+            db.SaveChanges();
+
+            MessageBox.Show("Объект изменен");
+
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
+
         }
     }
 }
