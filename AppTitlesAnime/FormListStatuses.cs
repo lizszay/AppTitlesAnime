@@ -62,7 +62,7 @@ namespace AppTitlesAnime
 		{
 			// Создание нового экземпляра формы добавления статуса.
 			FormAddStatus formAddStatus = new();
-			// Отображение формы добавления статуса как модального диалога.
+			// Отображение формы добавления статуса как  диалога.
 			DialogResult result = formAddStatus.ShowDialog(this);
 
 			// Проверка, была ли отменена операция добавления.

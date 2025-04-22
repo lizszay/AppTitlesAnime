@@ -104,6 +104,7 @@
             textBoxStatusName.Name = "textBoxStatusName";
             textBoxStatusName.Size = new Size(404, 33);
             textBoxStatusName.TabIndex = 1;
+            textBoxStatusName.TextChanged += TextBoxStatusName_TextChanged;
             textBoxStatusName.Validating += TextBoxStatusName_Validating;
             // 
             // labelStatusName
