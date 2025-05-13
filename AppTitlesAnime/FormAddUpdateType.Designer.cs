@@ -1,6 +1,6 @@
 ﻿namespace AppTitlesAnime
 {
-    partial class FormAddType
+    partial class FormAddUpdateType
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // FormAddType
+            // FormAddUpdateType
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -121,7 +121,8 @@
             Controls.Add(flowLayoutPanelBottom);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
-            Name = "FormAddType";
+            Name = "FormAddUpdateType";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Информация о типе аниме";
             flowLayoutPanelBottom.ResumeLayout(false);
             flowLayoutPanelBottom.PerformLayout();

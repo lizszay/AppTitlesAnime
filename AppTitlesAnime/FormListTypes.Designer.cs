@@ -129,7 +129,9 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormListTypes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Список типов аниме";
+            WindowState = FormWindowState.Maximized;
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTypes).EndInit();

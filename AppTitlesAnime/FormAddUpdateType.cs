@@ -3,11 +3,11 @@ using AppContext = AppTitlesAnime.Models.AppContext;
 
 namespace AppTitlesAnime
 {
-	public partial class FormAddType : Form
+	public partial class FormAddUpdateType : Form
 	{
 		private AppContext db;
 
-		public FormAddType()
+		public FormAddUpdateType()
 		{
 			InitializeComponent();
 		}

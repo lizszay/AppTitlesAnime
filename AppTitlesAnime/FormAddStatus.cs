@@ -35,7 +35,7 @@ namespace AppTitlesAnime
             if (String.IsNullOrEmpty(newStatusName))
 			{
                 errorProvider.SetError(textBoxStatusName, "Поле не может быть пустым"); // Устанавливаем сообщение об ошибке
-                btnSaveChanges.Enabled = false; // Отключаем кнопку сохранения
+                btnSaveChanges.Enabled = false; // блокируем кнопку сохранения
                 return; // Выходим из метода
             }
 
@@ -44,7 +44,7 @@ namespace AppTitlesAnime
             if (exists)
             {
                 errorProvider.SetError(textBoxStatusName, "Поле должно быть уникальным"); // Устанавливаем сообщение об ошибке
-                btnSaveChanges.Enabled = false; // Отключаем кнопку сохранения
+                btnSaveChanges.Enabled = false; // блокируем кнопку сохранения
             }
             else
             {
@@ -60,7 +60,7 @@ namespace AppTitlesAnime
             if (String.IsNullOrEmpty(textBoxStatusName.Text)) // Проверяем, пустое ли текстовое поле
             {
                 errorProvider.SetError(textBoxStatusName, "Поле не может быть пустым"); // Устанавливаем сообщение об ошибке
-                btnSaveChanges.Enabled = false; // Отключаем кнопку сохранения
+                btnSaveChanges.Enabled = false; // блокируем кнопку сохранения
             }
             else
             {

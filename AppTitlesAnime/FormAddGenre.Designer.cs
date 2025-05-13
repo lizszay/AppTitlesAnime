@@ -121,6 +121,7 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormAddGenre";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Информация о жанре аниме";
             flowLayoutPanelBottom.ResumeLayout(false);
             flowLayoutPanelBottom.PerformLayout();
