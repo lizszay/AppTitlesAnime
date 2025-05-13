@@ -78,13 +78,13 @@
             // 
             // textBoxDescription
             // 
-            textBoxDescription.Dock = DockStyle.Top;
+            textBoxDescription.Dock = DockStyle.Fill;
             textBoxDescription.Location = new Point(10, 383);
             textBoxDescription.Margin = new Padding(3, 15, 3, 3);
             textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
             textBoxDescription.ScrollBars = ScrollBars.Vertical;
-            textBoxDescription.Size = new Size(854, 130);
+            textBoxDescription.Size = new Size(854, 147);
             textBoxDescription.TabIndex = 13;
             // 
             // labelDescription
@@ -120,6 +120,7 @@
             // 
             numUpDownDuration.Dock = DockStyle.Top;
             numUpDownDuration.Location = new Point(10, 267);
+            numUpDownDuration.Maximum = new decimal(new int[] { 1440, 0, 0, 0 });
             numUpDownDuration.Name = "numUpDownDuration";
             numUpDownDuration.Size = new Size(854, 33);
             numUpDownDuration.TabIndex = 9;
@@ -138,6 +139,7 @@
             // 
             numUpDownCountSeries.Dock = DockStyle.Top;
             numUpDownCountSeries.Location = new Point(10, 209);
+            numUpDownCountSeries.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numUpDownCountSeries.Name = "numUpDownCountSeries";
             numUpDownCountSeries.Size = new Size(854, 33);
             numUpDownCountSeries.TabIndex = 7;
